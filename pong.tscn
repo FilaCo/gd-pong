@@ -4,17 +4,52 @@
 [ext_resource type="Script" uid="uid://dnnitbftjide5" path="res://paddle1.gd" id="2_4opyw"]
 [ext_resource type="Script" uid="uid://c85c6nglnggit" path="res://paddle2.gd" id="3_pkvn5"]
 [ext_resource type="PackedScene" uid="uid://drvbbl13mmnn7" path="res://ball.tscn" id="4_m5tya"]
+[ext_resource type="PackedScene" uid="uid://dxksoy12345b8" path="res://bottom_border.tscn" id="5_ludyb"]
+[ext_resource type="Script" uid="uid://odlxhkredy6e" path="res://gutter2.gd" id="5_trlu6"]
+[ext_resource type="PackedScene" uid="uid://uxiur0vovabl" path="res://top_border.tscn" id="6_trlu6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eipaa"]
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trlu6"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6iag"]
+normal = Vector2(1, 0)
 
 [node name="pong" type="Node2D" unique_id=318831472]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=533875451]
 
 [node name="Paddle1" parent="." unique_id=223079455 instance=ExtResource("1_8w31r")]
+position = Vector2(-100, 0)
 motion_mode = 1
 script = ExtResource("2_4opyw")
 
 [node name="Paddle2" parent="." unique_id=1441595785 instance=ExtResource("1_8w31r")]
+position = Vector2(100, 0)
 motion_mode = 1
 script = ExtResource("3_pkvn5")
 
 [node name="Ball" parent="." unique_id=1614989678 instance=ExtResource("4_m5tya")]
+physics_material_override = SubResource("PhysicsMaterial_eipaa")
+continuous_cd = 1
+
+[node name="Gutter2" type="Area2D" parent="." unique_id=1075334766]
+position = Vector2(227, 0)
+script = ExtResource("5_trlu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gutter2" unique_id=1066734736]
+shape = SubResource("WorldBoundaryShape2D_trlu6")
+
+[node name="BottomBorder" parent="." unique_id=203461019 instance=ExtResource("5_ludyb")]
+position = Vector2(0, 147)
+
+[node name="TopBorder" parent="." unique_id=1432273997 instance=ExtResource("6_trlu6")]
+position = Vector2(0, -147)
+
+[node name="Gutter1" type="Area2D" parent="." unique_id=499081589]
+position = Vector2(-227, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gutter1" unique_id=1834478463]
+shape = SubResource("WorldBoundaryShape2D_a6iag")

@@ -4,6 +4,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pkvn5"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x8fbi"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_m5tya"]
 radius = 10.0
 height = 20.0
@@ -15,4 +17,5 @@ script = ExtResource("1_x8fbi")
 shape = SubResource("CircleShape2D_pkvn5")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1346126760]
+material = SubResource("CanvasItemMaterial_x8fbi")
 mesh = SubResource("SphereMesh_m5tya")

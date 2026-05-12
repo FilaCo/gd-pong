@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dxksoy12345b8"]
+
+[ext_resource type="Script" uid="uid://c4w6ebprx1l74" path="res://bottom_border.gd" id="1_yhbxy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ludyb"]
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trlu6"]
+
+[node name="BottomBorder" type="StaticBody2D" unique_id=203461019]
+physics_material_override = SubResource("PhysicsMaterial_ludyb")
+script = ExtResource("1_yhbxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318769725]
+shape = SubResource("WorldBoundaryShape2D_trlu6")
