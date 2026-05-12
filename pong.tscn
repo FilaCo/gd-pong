@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b0d76auapemxi" path="res://paddle.tscn" id="1_8w31r"]
 [ext_resource type="Script" uid="uid://dnnitbftjide5" path="res://paddle1.gd" id="2_4opyw"]
 [ext_resource type="Script" uid="uid://c85c6nglnggit" path="res://paddle2.gd" id="3_pkvn5"]
+[ext_resource type="PackedScene" uid="uid://drvbbl13mmnn7" path="res://ball.tscn" id="4_m5tya"]
 
 [node name="pong" type="Node2D" unique_id=318831472]
 
@@ -15,3 +16,5 @@ script = ExtResource("2_4opyw")
 [node name="Paddle2" parent="." unique_id=1441595785 instance=ExtResource("1_8w31r")]
 motion_mode = 1
 script = ExtResource("3_pkvn5")
+
+[node name="Ball" parent="." unique_id=1614989678 instance=ExtResource("4_m5tya")]
