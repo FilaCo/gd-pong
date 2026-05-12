@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b0d76auapemxi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4u2a"]
+radius = 5.0
+height = 70.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8w31r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y4u2a"]
+radius = 5.0
+height = 70.0
+
+[node name="Paddle" type="CharacterBody2D" unique_id=223079455]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=464616560]
+shape = SubResource("CapsuleShape2D_y4u2a")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1491014977]
+material = SubResource("CanvasItemMaterial_8w31r")
+position = Vector2(-1.0728836e-06, 1.6093254e-06)
+mesh = SubResource("CapsuleMesh_y4u2a")
