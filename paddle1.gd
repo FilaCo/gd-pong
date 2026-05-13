@@ -12,9 +12,8 @@ func _process(delta: float) -> void:
 	velocity.y = direction * speed
 
 	move_and_slide()
-	
 
-	
+
 func _on_view_port_resized() -> void:
 	var half_vp_width = get_viewport_rect().size.x / 2
 	position.x = -half_vp_width + paddle_radius

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxksoy12345b8" path="res://bottom_border.tscn" id="5_ludyb"]
 [ext_resource type="PackedScene" uid="uid://uxiur0vovabl" path="res://top_border.tscn" id="6_trlu6"]
 [ext_resource type="PackedScene" uid="uid://cut3eee5fu8sa" path="res://gutter1.tscn" id="8_7860c"]
+[ext_resource type="Script" uid="uid://cnad037ww60nj" path="res://gutter1.gd" id="9_7860c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eipaa"]
 bounce = 1.0
@@ -26,7 +27,9 @@ script = ExtResource("3_pkvn5")
 
 [node name="Ball" parent="." unique_id=1614989678 instance=ExtResource("4_m5tya")]
 physics_material_override = SubResource("PhysicsMaterial_eipaa")
-continuous_cd = 1
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
 
 [node name="Gutter2" parent="." unique_id=1831822850 instance=ExtResource("5_a6iag")]
 position = Vector2(227, 0)
@@ -39,3 +42,4 @@ position = Vector2(0, -147)
 
 [node name="Gutter1" parent="." unique_id=1779205402 instance=ExtResource("8_7860c")]
 position = Vector2(-227, 0)
+script = ExtResource("9_7860c")
