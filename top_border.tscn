@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cysk02pa0h5y3" path="res://top_border.gd" id="1_qjmy3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ludyb"]
+friction = 0.0
 bounce = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trlu6"]

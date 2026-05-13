@@ -2,13 +2,13 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4u2a"]
 radius = 5.0
-height = 70.0
+height = 80.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8w31r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y4u2a"]
 radius = 5.0
-height = 70.0
+height = 80.0
 
 [node name="Paddle" type="CharacterBody2D" unique_id=223079455]
 motion_mode = 1

@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 var rng = RandomNumberGenerator.new()
 
@@ -9,7 +9,16 @@ func _ready() -> void:
 	else:
 		angle = rng.randf_range(-PI / 4., PI / 4.)
 	var direction = Vector2(cos(angle), sin(angle))
-	var initial_speed = randf_range(300, 500)
+	var initial_speed = randi_range(400, 600)
 	
-	linear_velocity = direction * initial_speed
+	velocity = direction * initial_speed
+
+func _physics_process(delta: float) -> void:
+	var collision = move_and_collide(velocity * delta)
 	
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+		
+		var thing_we_hit = collision.get_collider()
+		if thing_we_hit.is_in_group("paddles"):
+			velocity *= 1.05
