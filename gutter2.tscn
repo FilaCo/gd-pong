@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://jlpvcddoxoih"]
+
+[ext_resource type="Script" uid="uid://odlxhkredy6e" path="res://gutter2.gd" id="1_wawy4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trlu6"]
+normal = Vector2(-1, 0)
+
+[node name="Gutter2" type="Area2D" unique_id=1831822850]
+script = ExtResource("1_wawy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1483274560]
+shape = SubResource("WorldBoundaryShape2D_trlu6")
